@@ -44,6 +44,13 @@ sudo nsenter --target $(docker inspect -f '{{.State.Pid}}' minikube) -m -p docke
 ```shell
 sudo nsenter --target $(docker inspect -f '{{.State.Pid}}' minikube) -m -p tail -f /var/lib/docker/containers/6ba8c93d48f45cd0d9ea6f951b7fa62ef08b0bd719471d06bb78b2622a9b14d6/6ba8c93d48f45cd0d9ea6f951b7fa62ef08b0bd719471d06bb78b2622a9b14d6-json.log
 ```
+1. filebeat chart
+2. logstash chart
+3. python generate 10mb file in log
+4. Check nsenter /var/log/containers/id/log/* folder with watch
+filebeat -> logstash
+5. check logstash stdout|file
+
 root@548d895e470d:/# ls -l /var/log/nginx/
 total 0
 lrwxrwxrwx 1 root root 11 Feb  1 16:18 access.log -> /dev/stdout
